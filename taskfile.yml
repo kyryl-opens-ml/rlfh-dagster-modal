@@ -1,0 +1,15 @@
+version: '3'
+
+tasks:
+  ssh_vm1:
+    cmds:
+      - ssh ubuntu@54.243.18.146
+
+  ssh_vm2:
+    cmds:
+      - ssh ubuntu@34.229.176.157
+
+  upload:
+    cmds:
+      - rsync -ave ssh /Users/kyryltruskovskyi/Projects/Personal/KOML/rlhf-in-2024-with-dpo-and-hf ubuntu@34.229.176.157:~/rlhf-in-2024-with-dpo-and-hf
+      - rsync -ave ssh /Users/kyryltruskovskyi/Projects/Personal/KOML/rlhf-in-2024-with-dpo-and-hf ubuntu@54.243.18.146:~/rlhf-in-2024-with-dpo-and-hf
